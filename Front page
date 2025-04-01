@@ -2,30 +2,20 @@
 <meta charset="utf-8">
 <head>
 <title>Boeing Exploration</title>
-
-
-
-
 <style>
+
 body {
-
 font-family: Arial, sans-serif;
-background-color: #f4f4f4
-
-
-;
+background-color: #f4f4f4;
 }
 
 h2.textstyle {
-    font-family: nunito
+    font-family: nunito;
 }
 
 p.textstyle{
 font-size: 60;
 }
-
-
-
 
 .list {
   text-align: center;
@@ -36,8 +26,6 @@ right: 50%;
 width: 810px;
 background-color: #007bff;
 }
-
-
 
 .front-page {
 position: absolute;
@@ -71,13 +59,11 @@ bottom: 20%;
 background-color: #007bff; /* Blue color */
 }
 
-
 table {
             width: 60%;
             margin: 0 auto 20px;
             border-collapse: collapse;
 }
-
 
 .blue-bar-3 {
 position: absolute;
