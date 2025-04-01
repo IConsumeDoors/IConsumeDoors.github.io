@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Specification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .top-banner {
+            background-color: #007bff;
+            padding: 10px 0;
+            text-align: center;
+        }
+      
+        
+        .header-box {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 60%;
+            margin: 0 auto 20px;
+            border-collapse: collapse;
+        }
+        th {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+	td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 60%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .gallery img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <a href="https://www.boeing.com/"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Boeing_full_logo.svg/2560px-Boeing_full_logo.svg.png" alt="Boeing Logo" height="50px"> </a>
+    </div>
+    
+    <div class="header-box">
+        <h1>Boeing 737 Specifications</h1>
+        <p>The Boeing 737 is a narrow-body aircraft produced by Boeing at its Renton Factory in Washington. Developed as a shorter, lower-cost twinjet airliner, it is Boeing's best-selling jet airliner.</p>
+    </div>
+
+    <div class="content-section">
+        <table>
+            <tr>
+                <th>Model</th><th>Length</th><th>Wingspan</th><th>Range</th><th>Capacity</th>
+            </tr>
+            <tr>
+                <td>737-700</td><td>33.6m</td><td>35.8m</td><td>6,370km</td><td>140</td>
+            </tr>
+            <tr>
+                <td>737-800</td><td>39.5m</td><td>35.8m</td><td>5,765km</td><td>189</td>
+            </tr>
+            <tr>
+                <td>737-900</td><td>42.1m</td><td>35.8m</td><td>5,540km</td><td>220</td>
+            </tr>
+            <tr>
+                <td>737 MAX 7</td><td>35.6m</td><td>35.9m</td><td>7,130km</td><td>172</td>
+            </tr>
+            <tr>
+                <td>737 MAX 8</td><td>39.5m</td><td>35.9m</td><td>6,570km</td><td>210</td>
+            </tr>
+            <tr>
+                <td>737 MAX 9</td><td>42.1m</td><td>35.9m</td><td>6,570km</td><td>220</td>
+            </tr>
+            <tr>
+                <td>737 MAX 10</td><td>43.8m</td><td>35.9m</td><td>6,110km</td><td>230</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="gallery-container">
+        <button class="arrow prev" onclick="prevSlide()">&#10094;</button>
+        <div class="gallery" id="gallery">
+            <img src="https://www.boeing.com/content/theboeingcompany/us/en/commercial/737ng/_jcr_content/root/container/container_1258106237/container/carousel/item_1700253310300.coreimg.85.1600.jpeg/1702320802351/gallery-full-01.jpeg" alt="Gallery Image">
+            <img src="https://www.boeing.com/content/theboeingcompany/us/en/commercial/737ng/_jcr_content/root/container/container_1258106237/container/carousel/item_1700253335949.coreimg.85.1600.jpeg/1702320796724/gallery-large-02.jpeg" alt="Gallery Image">
+            <img src="https://www.boeing.com/content/theboeingcompany/us/en/commercial/737ng/_jcr_content/root/container/container_1258106237/container/carousel/item_1700253339869.coreimg.85.1600.jpeg/1702320802634/gallery-large-04.jpeg" alt="Gallery Image">
+            <img src="https://www.boeing.com/content/theboeingcompany/us/en/commercial/737ng/_jcr_content/root/container/container_1258106237/container/carousel/item_1700253343286.coreimg.85.1600.jpeg/1702320803163/gallery-large-07.jpeg" alt="Gallery Image">
+            <img src="https://www.boeing.com/content/theboeingcompany/us/en/commercial/737ng/_jcr_content/root/container/container_1258106237/container/carousel/item_1700253344751.coreimg.85.1600.jpeg/1702320805700/gallery-large-08.jpeg" alt="Gallery Image">
+        </div>
+        <button class="arrow next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script>
+        let index = 0;
+        function showSlide() {
+            const gallery = document.getElementById("gallery");
+            const images = gallery.getElementsByTagName("img");
+            index = (index + images.length) % images.length;
+            gallery.style.transform = `translateX(-${index * 100}%)`;
+        }
+        function nextSlide() {
+            index++;
+            showSlide();
+        }
+        function prevSlide() {
+            index--;
+            showSlide();
+        }
+    </script>
+</body>
+</html>
